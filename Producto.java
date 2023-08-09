@@ -1,6 +1,6 @@
 package shoponline;
 
-public abstract class Producto {
+    public abstract class Producto {
     protected String desc;
     protected double precio;
     

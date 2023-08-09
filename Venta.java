@@ -65,7 +65,7 @@ public class Venta {
     public double calcularImporteTotal(){
         double total = 0;
         for(Producto p:listaProd){
-            total += p.getPrecio();
+            total += p.precio;
         }
         return total;
     }

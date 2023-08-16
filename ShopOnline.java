@@ -14,11 +14,26 @@ public class ShopOnline {
     
     public static Producto hacerRemera(){
         Scanner teclado = new Scanner(System.in); 
-        
+        Talles t = Talles.S;
         System.out.println("Ingrese el talle: ");
         char talle = teclado.next().charAt(0);
         
-        Producto r = new Remera("Remera", 2000, talle);
+        switch(talle){
+            case 'S': t = Talles.S;
+            break;
+            
+            case 'M': t = Talles.M;
+            break;
+            
+            case 'L': t = Talles.L;
+            break;
+            
+            case 'X': t = Talles.XL;
+            break;
+            
+        }
+        
+        Producto r = new Remera("Remera", 2000, t);
         return r;
     }
     

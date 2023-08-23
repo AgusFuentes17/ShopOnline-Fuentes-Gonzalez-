@@ -1,6 +1,8 @@
 package shoponline;
 
-public class Accesorio extends Producto {
+import javax.swing.JOptionPane;
+
+public class Accesorio extends Producto implements Importable {
     private double peso;
     private String metal;
 
@@ -25,7 +27,19 @@ public class Accesorio extends Producto {
     public void setMetal(String metal) {
         this.metal = metal;
     }
-
+    
+    @Override
+    public void arancelAduanero(){
+        precio += 10*precio/100;
+        JOptionPane.showMessageDialog(null, "Arancel Aduanero: " + precio);
+    }
+    
+    @Override
+    public void arancelTransporte(){
+        precio += 2*precio/100;
+        JOptionPane.showMessageDialog(null, "Arancel de Transporte: " + precio);
+    }
+    
     @Override
     public double getPrecio() {
         if(metal.equalsIgnoreCase("oro")){
@@ -38,6 +52,8 @@ public class Accesorio extends Producto {
             precio = 50;
         }
         precio = precio * peso;
+        arancelAduanero();
+        arancelTransporte();
         return precio;
     }
     

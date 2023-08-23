@@ -41,19 +41,20 @@ public class Accesorio extends Producto implements Importable {
     }
     
     @Override
+    // NO olvidar referenciar al objeto (this)
     public double getPrecio() {
         if(metal.equalsIgnoreCase("oro")){
-            precio = 100;
+            this.precio = 100;
         }
         else if(metal.equalsIgnoreCase("plata")){
-            precio = 25;
+            this.precio = 25;
         }
         else if(metal.equalsIgnoreCase("acero")){
-            precio = 50;
+            this.precio = 50;
         }
         precio = precio * peso;
-        arancelAduanero();
-        arancelTransporte();
+        this.arancelAduanero();
+        this.arancelTransporte();
         return precio;
     }
     

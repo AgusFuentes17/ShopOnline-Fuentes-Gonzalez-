@@ -8,7 +8,7 @@ public class ShopOnline {
     public static void main(String[] args){
         Cliente c = crearCliente();
         Venta v = crearVenta(c);
-        v = hacerVariasVentas(v);
+        v = cargarProducto(v);
     }
     
     
@@ -104,7 +104,7 @@ public class ShopOnline {
         return v;
     }
     
-    public static Venta agregarVenta(Venta v){
+    public static Venta cargarProducto(Venta v){
         Scanner teclado = new Scanner(System.in);
         int opc = 1;
         while(opc==1){
@@ -116,14 +116,4 @@ public class ShopOnline {
         return v;
     }
     
-    public static Venta hacerVariasVentas(Venta v){
-        Scanner teclado = new Scanner(System.in);
-        int opc = 1;
-        while(opc==1){
-            v = agregarVenta(v);
-            System.out.println("¿Quiere hacer otra venta o no? 1-Si, 2-No: ");
-            opc = teclado.nextInt();
-        }
-        return v;
-    }
 }

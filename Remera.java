@@ -1,7 +1,7 @@
 package shoponline;
-
+// falta documentar
 public class Remera extends Producto {
-    private Talles talle;
+    private Talles talle; // tipo ENUM
     
     public Remera(String d, double p, Talles t){
         super(d,p);
@@ -17,9 +17,10 @@ public class Remera extends Producto {
     }
 
     @Override
+    // no OLVIDAR referenciar al objeto (si fuera una eval BAJO PUNTOS)
     public double getPrecio() {
         switch(talle){
-            case S: precio += 5*precio/100;
+            case S: this.precio += 5*precio/100;
             break;
             
             case M: precio += 10*precio/100;
